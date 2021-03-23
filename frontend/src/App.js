@@ -1,11 +1,16 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import NavHeader from "./components/layout/NavHeader";
+import Routing from "./routes/Routing";
 
 function App() {
   return (
-    <div >
-      <h3>Hello World</h3>
-      
-    </div>
+    <Router>
+      <Fragment>
+        <NavHeader />
+        <Routing />
+      </Fragment>
+    </Router>
   );
 }
 
