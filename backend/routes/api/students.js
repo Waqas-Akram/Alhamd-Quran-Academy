@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Student = require("../../models/Student");
 
-// @ /api/students  register a student
+// @post /api/students  register a student
 
 router.post("/", async (req, res) => {
   let {
@@ -31,6 +31,17 @@ router.post("/", async (req, res) => {
     });
     const student = await newStudent.save();
     res.json(student);
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).json({ msg: "Server Error" });
+  }
+});
+
+//@get /api/students
+router.get("/", async (req, res) => {
+  try {
+    const students = await Student.find().sort({ date: -1 });
+    res.json(students);
   } catch (error) {
     console.error(error.message);
     res.status(500).json({ msg: "Server Error" });
