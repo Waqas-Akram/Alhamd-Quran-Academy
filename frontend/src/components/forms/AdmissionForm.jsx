@@ -2,8 +2,41 @@ import React, { Fragment } from "react";
 import { Row, Col, Container, Jumbotron, Form, Button } from "react-bootstrap";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
+
+toast.configure();
 
 const AdmissionForm = () => {
+  const notify = () => {
+    toast("Please Wait until you get success message", {
+      position: toast.POSITION.TOP_CENTER,
+      autoClose: 4000,
+    });
+  };
+  const alertSuccessNotify = () =>
+    Swal.fire({
+      title: "Submitted Successfully",
+      icon: "success",
+      showCancelButton: true,
+      confirmButtonText: `Check Fee Structure`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        window.location.href = "/fee";
+      } else if (result.isDenied) {
+        window.location.href = "/admission";
+      }
+    });
+  const alertErrorNotify = () =>
+    Swal.fire(
+      "Form Not Submitted",
+      "Check your internet connectivity",
+      "error"
+    );
+
   const formik = useFormik({
     initialValues: {
       studentName: "",
@@ -28,8 +61,26 @@ const AdmissionForm = () => {
       course: Yup.string().required("Course selection is mendatory"),
       address: Yup.string().required("Address is required"),
     }),
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+    onSubmit: async (values, { resetForm }) => {
+      try {
+        notify();
+        const config = {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        };
+        const body = JSON.stringify(values);
+        await axios.post("/api/contact/send", body, config);
+        const res = await axios.post("/api/students", body, config);
+
+        if (res.status === 200) {
+          alertSuccessNotify();
+        }
+
+        resetForm({ values: "" });
+      } catch (error) {
+        alertErrorNotify();
+      }
     },
   });
   return (
@@ -58,11 +109,13 @@ const AdmissionForm = () => {
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       value={formik.values.studentName}
-                      name='studentName'
+                      name="studentName"
                       autoComplete="off"
                     />
                     {formik.touched.studentName && formik.errors.studentName ? (
-                      <div className="text-danger">{formik.errors.studentName}</div>
+                      <div className="text-danger">
+                        {formik.errors.studentName}
+                      </div>
                     ) : null}
                   </Form.Group>
                   <Row>
@@ -75,12 +128,15 @@ const AdmissionForm = () => {
                           onChange={formik.handleChange}
                           onBlur={formik.handleBlur}
                           value={formik.values.fatherName}
-                          name='fatherName'
+                          name="fatherName"
                           autoComplete="off"
                         />
-                         {formik.touched.fatherName && formik.errors.fatherName ? (
-                      <div className="text-danger">{formik.errors.fatherName}</div>
-                    ) : null}
+                        {formik.touched.fatherName &&
+                        formik.errors.fatherName ? (
+                          <div className="text-danger">
+                            {formik.errors.fatherName}
+                          </div>
+                        ) : null}
                       </Form.Group>
                     </Col>
                     <Col>
@@ -95,9 +151,12 @@ const AdmissionForm = () => {
                           autoComplete="off"
                           name="motherName"
                         />
-                         {formik.touched.motherName && formik.errors.motherName ? (
-                      <div className="text-danger">{formik.errors.motherName}</div>
-                    ) : null}
+                        {formik.touched.motherName &&
+                        formik.errors.motherName ? (
+                          <div className="text-danger">
+                            {formik.errors.motherName}
+                          </div>
+                        ) : null}
                       </Form.Group>
                     </Col>
                   </Row>
@@ -114,9 +173,11 @@ const AdmissionForm = () => {
                           autoComplete="off"
                           name="birthDate"
                         />
-                         {formik.touched.birthDate && formik.errors.birthDate ? (
-                      <div className="text-danger">{formik.errors.birthDate}</div>
-                    ) : null}
+                        {formik.touched.birthDate && formik.errors.birthDate ? (
+                          <div className="text-danger">
+                            {formik.errors.birthDate}
+                          </div>
+                        ) : null}
                       </Form.Group>
                     </Col>
                   </Row>
@@ -132,11 +193,13 @@ const AdmissionForm = () => {
                           onBlur={formik.handleBlur}
                           value={formik.values.email}
                           autoComplete="off"
-                          name='email'
+                          name="email"
                         />
-                         {formik.touched.email && formik.errors.email ? (
-                      <div className="text-danger">{formik.errors.email}</div>
-                    ) : null}
+                        {formik.touched.email && formik.errors.email ? (
+                          <div className="text-danger">
+                            {formik.errors.email}
+                          </div>
+                        ) : null}
                       </Form.Group>
                     </Col>
                     <Col>
@@ -149,11 +212,14 @@ const AdmissionForm = () => {
                           onBlur={formik.handleBlur}
                           value={formik.values.phoneNumber}
                           autoComplete="off"
-                          name='phoneNumber'
+                          name="phoneNumber"
                         />
-                         {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
-                      <div className="text-danger">{formik.errors.phoneNumber}</div>
-                    ) : null}
+                        {formik.touched.phoneNumber &&
+                        formik.errors.phoneNumber ? (
+                          <div className="text-danger">
+                            {formik.errors.phoneNumber}
+                          </div>
+                        ) : null}
                       </Form.Group>
                     </Col>
                   </Row>
@@ -165,9 +231,9 @@ const AdmissionForm = () => {
                       onBlur={formik.handleBlur}
                       value={formik.values.course}
                       autoComplete="off"
-                      name='course'
+                      name="course"
                     >
-                      <option className='text-muted'  defaultValue >
+                      <option className="text-muted" defaultValue>
                         {" "}
                         choose your desired course
                       </option>
@@ -189,9 +255,9 @@ const AdmissionForm = () => {
                       onBlur={formik.handleBlur}
                       value={formik.values.address}
                       autoComplete="off"
-                      name='address'
+                      name="address"
                     />
-                     {formik.touched.address && formik.errors.address ? (
+                    {formik.touched.address && formik.errors.address ? (
                       <div className="text-danger">{formik.errors.address}</div>
                     ) : null}
                   </Form.Group>
@@ -208,7 +274,7 @@ const AdmissionForm = () => {
                       onBlur={formik.handleBlur}
                       value={formik.values.detail}
                       autoComplete="off"
-                      name='detail'
+                      name="detail"
                     />
                   </Form.Group>
 
