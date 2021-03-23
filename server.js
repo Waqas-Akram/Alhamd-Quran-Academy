@@ -1,9 +1,15 @@
 const express = require("express");
 const colors = require("colors");
+const connectDB = require("./backend/config/db");
 const app = express();
+require("dotenv").config();
 
 //Body Parser
 app.use(express.json({ extended: true }));
+
+//Databse Connection Execution
+
+connectDB();
 
 //Run api server
 app.get("/", (req, res) => {
