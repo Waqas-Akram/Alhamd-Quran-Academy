@@ -1,6 +1,7 @@
 const express = require("express");
 const colors = require("colors");
 const connectDB = require("./backend/config/db");
+const students = require('./backend/routes/api/students')
 const app = express();
 require("dotenv").config();
 
@@ -10,6 +11,10 @@ app.use(express.json({ extended: true }));
 //Databse Connection Execution
 
 connectDB();
+
+//routes
+
+app.use('/api/students',students);
 
 //Run api server
 app.get("/", (req, res) => {
