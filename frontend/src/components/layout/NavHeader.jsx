@@ -2,6 +2,7 @@ import React, { Fragment, useState, useEffect } from "react";
 import { Navbar, Nav, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import ViewHeadlineIcon from "@material-ui/icons/ViewHeadline";
+import MenuBookIcon from "@material-ui/icons/MenuBook";
 
 const NavHeader = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -24,7 +25,7 @@ const NavHeader = () => {
       <Navbar
         collapseOnSelect
         expand="lg"
-        bg={scrollY ? "warning" : "white"}
+        bg={scrollY ? "warning" : "dark"}
         variant="dark"
         sticky="top"
       >
@@ -36,8 +37,8 @@ const NavHeader = () => {
               } `}
             >
               <b>
-                Alhamd Quran
-                <br /> Academy
+                <MenuBookIcon /> Alhamd Quran
+                <p className="mt-0">Academy</p>
               </b>
             </h2>
           </Navbar.Brand>
