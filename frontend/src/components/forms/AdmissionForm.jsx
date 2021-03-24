@@ -48,6 +48,7 @@ const AdmissionForm = () => {
       email: "",
       address: "",
       detail: "",
+      language: "",
     },
     validationSchema: Yup.object({
       studentName: Yup.string().required("Student Name is required"),
@@ -60,6 +61,7 @@ const AdmissionForm = () => {
       phoneNumber: Yup.string().required("Phone Number is required"),
       course: Yup.string().required("Course selection is mendatory"),
       address: Yup.string().required("Address is required"),
+      language: Yup.string().required("Language is required"),
     }),
     onSubmit: async (values, { resetForm }) => {
       try {
@@ -86,14 +88,14 @@ const AdmissionForm = () => {
   return (
     <Fragment>
       <Container>
-        <Jumbotron className="bg-warning shadow my-4">
+        <Jumbotron className="bg-dark shadow my-4">
           <Row>
-            <Col sm="4" lg="4" md="4">
+            <Col sm="4" lg="4" md="4" className="my-lg-5 mt-sm-5 mt-md-5">
               <h1 className="text-center text-white">
                 <b>Learn Quran with us</b>
               </h1>
-              <div className="bg-white p-4 my-3 ">
-                <h2 className=" text-warning text-center ">
+              <div className="bg-warning p-1 my-3 ">
+                <h2 className=" text-white text-center  ">
                   <b>Register Now</b>
                 </h2>
               </div>
@@ -223,29 +225,60 @@ const AdmissionForm = () => {
                       </Form.Group>
                     </Col>
                   </Row>
-                  <Form.Group controlId="ControlSelect1">
-                    <Form.Label>Select Course</Form.Label>
-                    <Form.Control
-                      as="select"
-                      onChange={formik.handleChange}
-                      onBlur={formik.handleBlur}
-                      value={formik.values.course}
-                      autoComplete="off"
-                      name="course"
-                    >
-                      <option className="text-muted" defaultValue>
-                        {" "}
-                        choose your desired course
-                      </option>
-                      <option>Madni Qaida</option>
-                      <option>Nazra Quran Pak</option>
-                      <option>Hifz-e-Quran Pak</option>
-                      <option>Namaz</option>
-                    </Form.Control>
-                    {formik.touched.course && formik.errors.course ? (
-                      <div className="text-danger">{formik.errors.course}</div>
-                    ) : null}
-                  </Form.Group>
+                  <Row>
+                    <Col>
+                      <Form.Group controlId="ControlSelect1">
+                        <Form.Label>Select Course</Form.Label>
+                        <Form.Control
+                          as="select"
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                          value={formik.values.course}
+                          autoComplete="off"
+                          name="course"
+                        >
+                          <option className="text-muted" defaultValue>
+                            {" "}
+                            select course
+                          </option>
+                          <option>Madni Qaida</option>
+                          <option>Nazra Quran Pak</option>
+                          <option>Hifz-e-Quran Pak</option>
+                          <option>Namaz</option>
+                        </Form.Control>
+                        {formik.touched.course && formik.errors.course ? (
+                          <div className="text-danger">
+                            {formik.errors.course}
+                          </div>
+                        ) : null}
+                      </Form.Group>
+                    </Col>
+                    <Col>
+                      <Form.Group controlId="ControlSelect2">
+                        <Form.Label>Select Language</Form.Label>
+                        <Form.Control
+                          as="select"
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                          value={formik.values.language}
+                          autoComplete="off"
+                          name="language"
+                        >
+                          <option className="text-muted" defaultValue>
+                            {" "}
+                            choose language
+                          </option>
+                          <option>Urdu</option>
+                          <option>English</option>
+                        </Form.Control>
+                        {formik.touched.language && formik.errors.language ? (
+                          <div className="text-danger">
+                            {formik.errors.language}
+                          </div>
+                        ) : null}
+                      </Form.Group>
+                    </Col>
+                  </Row>
                   <Form.Group controlId="formBasicAddress">
                     <Form.Label>Address</Form.Label>
                     <Form.Control
