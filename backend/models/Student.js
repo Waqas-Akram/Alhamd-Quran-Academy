@@ -26,7 +26,7 @@ const studentSchema = new Schema({
     type: String,
     required: true,
   },
-  age: {
+  address: {
     type: String,
   },
   course: {
@@ -34,6 +34,9 @@ const studentSchema = new Schema({
     required: true,
   },
   detail: {
+    type: String,
+  },
+  language: {
     type: String,
   },
   date: {
