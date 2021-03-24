@@ -10,24 +10,23 @@ router.post("/", async (req, res) => {
     fatherName,
     motherName,
     birthDate,
-    age,
+    language,
     course,
     detail,
     email,
     phoneNumber,
   } = req.body;
-  age = age + " " + "years";
   try {
     const newStudent = new Student({
       studentName,
       fatherName,
       motherName,
       birthDate,
-      age,
       course,
       detail,
       email,
       phoneNumber,
+      language,
     });
     const student = await newStudent.save();
     res.json(student);

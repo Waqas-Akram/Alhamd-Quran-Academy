@@ -10,13 +10,12 @@ router.post("/send", async (req, res) => {
     fatherName,
     motherName,
     birthDate,
-    age,
+    language,
     course,
     detail,
     email,
     phoneNumber,
   } = req.body;
-  age = age + " " + "years";
   try {
     const transporter = nodemailer.createTransport({
       service: "Outlook",
@@ -43,8 +42,8 @@ router.post("/send", async (req, res) => {
         email +
         "</li><li>Phone Number : " +
         phoneNumber +
-        "</li><li>Total Age of Student :" +
-        age +
+        "</li><li>Selected Language :" +
+        language +
         "</li><li>Course Applied:" +
         course +
         "</li><li>Extra detail : " +
