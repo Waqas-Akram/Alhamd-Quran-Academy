@@ -5,7 +5,7 @@ const FeeArray = [
     id: 1,
     animation: <FreeAnimation />,
     charges: "0$",
-    duration: "First 3 days for newly admitted",
+    duration: "First 3 days for newly admitted students",
   },
   {
     id: 2,
