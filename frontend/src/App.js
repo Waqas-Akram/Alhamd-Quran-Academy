@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import NavHeader from "./components/layout/NavHeader";
 import Routing from "./routes/Routing";
 import SpinnerAnimation from "./components/animations/spinner/SpinnerAnimation";
+import Footer from "./components/footer/Footer";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -19,6 +20,7 @@ function App() {
       <Fragment>
         <NavHeader />
         <Routing />
+        <Footer />
       </Fragment>
     </Router>
   );
