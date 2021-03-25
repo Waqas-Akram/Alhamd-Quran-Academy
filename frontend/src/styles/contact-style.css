@@ -1,0 +1,8 @@
+.profile-image{
+    outline: none;
+    box-sizing: border-box;
+    height: 180px;
+    width: 180px;
+    margin: 12px 0;
+    margin-top: -30px;
+}
