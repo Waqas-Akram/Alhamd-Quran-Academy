@@ -241,7 +241,7 @@ const AdmissionForm = () => {
                             {" "}
                             select course
                           </option>
-                          <option>Madni Qaida</option>
+                          <option>Madni Qaidah</option>
                           <option>Nazra Quran Pak</option>
                           <option>Hifz-e-Quran Pak</option>
                           <option>Namaz</option>
