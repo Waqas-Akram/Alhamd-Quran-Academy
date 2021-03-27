@@ -319,7 +319,7 @@ const AdmissionForm = () => {
                     type="submit"
                     disabled={loading ? true : false}
                   >
-                    {loading ? <b>Submitting</b> : <b>Register</b>}
+                    {loading ? <b>Submitting....</b> : <b>Register</b>}
                   </Button>
                 </Form>
               </Jumbotron>
