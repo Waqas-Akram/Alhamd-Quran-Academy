@@ -16,6 +16,7 @@ const FreeAnimation = () => {
       <div
         ref={container}
         className="container"
+        style={{width:"190px"}}
       ></div>
     </center>
   );
