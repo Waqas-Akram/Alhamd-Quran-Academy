@@ -15,6 +15,7 @@ router.post("/", async (req, res) => {
     detail,
     email,
     phoneNumber,
+    address
   } = req.body;
   try {
     const newStudent = new Student({
@@ -27,6 +28,7 @@ router.post("/", async (req, res) => {
       email,
       phoneNumber,
       language,
+      address
     });
     const student = await newStudent.save();
     res.json(student);
@@ -46,5 +48,22 @@ router.get("/", async (req, res) => {
     res.status(500).json({ msg: "Server Error" });
   }
 });
+
+//@get /api/stuudents/id
+
+router.get('/:id', async (req, res) => {
+ try {
+  const student = await Student.findById(req.params.id);
+  if(!student){
+    res.status(404).json({ msg: "Student Not Found" });
+  }
+  res.json(student);
+   
+ } catch (error) {
+   console.error(error.message);
+   res.status(500).json({ msg: "Server Error" });
+   
+ }
+})
 
 module.exports = router;
