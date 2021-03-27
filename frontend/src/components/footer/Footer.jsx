@@ -23,7 +23,7 @@ const Footer = () => {
                       <Image
                         src="/images/profile.jpeg"
                         roundedCircle
-                        className="profile-image mt-3"
+                        className="profile-image mt-0"
                       />
                     </center>
                     <h5>
