@@ -6,6 +6,15 @@ import MenuBookIcon from "@material-ui/icons/MenuBook";
 
 const NavHeader = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [mouse, setMouse] = useState(false);
+
+  const handleMouseOver = () => {
+    setMouse(true);
+  };
+
+  const handleMouseOut = () => {
+    setMouse(false);
+  };
 
   function logit() {
     setScrollY(window.pageYOffset);
@@ -51,7 +60,12 @@ const NavHeader = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ml-auto">
               <Fragment>
-                <Link to="/">
+                <Link
+                  to="/"
+                  style={{ textDecoration: mouse ? "none" : null }}
+                  onMouseOver={handleMouseOver}
+                  onMouseOut={handleMouseOut}
+                >
                   <p
                     className={`mt-2 mr-2 ${
                       scrollY ? "text-white" : "text-warning"
@@ -60,7 +74,12 @@ const NavHeader = () => {
                     <b>Home</b>
                   </p>
                 </Link>
-                <Link to="/fee">
+                <Link
+                  to="/fee"
+                  style={{ textDecoration: mouse ? "none" : null }}
+                  onMouseOver={handleMouseOver}
+                  onMouseOut={handleMouseOut}
+                >
                   <p
                     className={`mt-2 mr-2 ${
                       scrollY ? "text-white" : "text-warning"
@@ -70,7 +89,12 @@ const NavHeader = () => {
                   </p>
                 </Link>
 
-                <Link to="/books">
+                <Link
+                  to="/books"
+                  style={{ textDecoration: mouse ? "none" : null }}
+                  onMouseOver={handleMouseOver}
+                  onMouseOut={handleMouseOut}
+                >
                   <p
                     className={`mt-2 mr-2 ${
                       scrollY ? "text-white" : "text-warning"
@@ -79,13 +103,19 @@ const NavHeader = () => {
                     <b>Books</b>
                   </p>
                 </Link>
-                <Link to="/contact">
+
+                <Link
+                  to="/admin"
+                  style={{ textDecoration: mouse ? "none" : null }}
+                  onMouseOver={handleMouseOver}
+                  onMouseOut={handleMouseOut}
+                >
                   <p
                     className={`mt-2 mr-2 ${
                       scrollY ? "text-white" : "text-warning"
                     }`}
                   >
-                    <b>Contact</b>
+                    <b>Admin</b>
                   </p>
                 </Link>
                 <Link to="/admission">
