@@ -1,0 +1,11 @@
+.list-styling {
+  list-style: none;
+}
+
+.list-styling .decoration::before {
+  content: "\25A1";
+  color: #FF7518;
+  font-weight: bold;
+  display: inline-block; 
+  width: 1em;
+}
