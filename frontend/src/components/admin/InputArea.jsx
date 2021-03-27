@@ -20,7 +20,7 @@ const InputArea = ({ setLoading }) => {
         Swal.fire({
 
           title:"Incorrect Email",
-          text:"If you are not an admin of this site , Do'nt do that again",
+          text:"If you are not an admin of this site , Don't do that again",
           icon:'warning'
         })
       } else if (values.password !== "Saleem2526") {
