@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Row, Col, Container, Jumbotron, Form, Button } from "react-bootstrap";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -10,8 +10,9 @@ import Swal from "sweetalert2";
 toast.configure();
 
 const AdmissionForm = () => {
+  const [loading, setLoading] = useState(false);
   const notify = () => {
-    toast("Please Wait until you get success message", {
+    toast("Wait... Your application is being submitted", {
       position: toast.POSITION.TOP_CENTER,
       autoClose: 4000,
     });
@@ -65,6 +66,7 @@ const AdmissionForm = () => {
     }),
     onSubmit: async (values, { resetForm }) => {
       try {
+        setLoading(true);
         notify();
         const config = {
           headers: {
@@ -77,6 +79,7 @@ const AdmissionForm = () => {
 
         if (res.status === 200) {
           alertSuccessNotify();
+          setLoading(false);
         }
 
         resetForm({ values: "" });
@@ -208,7 +211,7 @@ const AdmissionForm = () => {
                       <Form.Group controlId="formBasicPhoneNumber">
                         <Form.Label>Phone Number</Form.Label>
                         <Form.Control
-                          type="number"
+                          type="text"
                           placeholder="Add phone number"
                           onChange={formik.handleChange}
                           onBlur={formik.handleBlur}
@@ -311,8 +314,12 @@ const AdmissionForm = () => {
                     />
                   </Form.Group>
 
-                  <Button variant="warning" type="submit">
-                    Register
+                  <Button
+                    variant="warning"
+                    type="submit"
+                    disabled={loading ? true : false}
+                  >
+                    {loading ? <b>Submitting</b> : <b>Register</b>}
                   </Button>
                 </Form>
               </Jumbotron>
