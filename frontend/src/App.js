@@ -4,6 +4,7 @@ import NavHeader from "./components/layout/NavHeader";
 import Routing from "./routes/Routing";
 import SpinnerAnimation from "./components/animations/spinner/SpinnerAnimation";
 import Footer from "./components/footer/Footer";
+import ScrollToTop from './components/scroll/ScrollToTop'
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -19,6 +20,7 @@ function App() {
     <Router>
       <Fragment>
         <NavHeader />
+        <ScrollToTop />
         <Routing />
         <Footer />
       </Fragment>
