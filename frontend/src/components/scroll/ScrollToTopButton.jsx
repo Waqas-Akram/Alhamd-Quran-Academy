@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import BackToTop from "react-easy-back-to-top";
-import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 
 export default function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
@@ -23,7 +22,7 @@ export default function ScrollToTopButton() {
       text="Go Up"
       backgroundColor="gray"
       position={{ right: "1%", bottom: "10%" }}
-      hover={{ backgroundColor: "yellow", color: "gray" }}
+      hover={{ backgroundColor: "#FF7518", color: "white" }}
       transition="all 0.5s"
       showOnDistance={0}
       borderRadius={16}
