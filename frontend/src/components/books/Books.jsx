@@ -2,9 +2,15 @@ import React, { Fragment } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import BookCard from "./BookCard";
 import BookArray from "./BookArray";
+import {Helmet} from 'react-helmet'
 const Books = () => {
   return (
     <Fragment>
+      <Helmet>
+                <meta charSet="utf-8" />
+                <meta name='description' content='Read islamic books.'/>
+                <title>Books | Alhamd Quran Academy</title>
+            </Helmet>
       <Container>
         <Row>
           {BookArray.map((book) => {
