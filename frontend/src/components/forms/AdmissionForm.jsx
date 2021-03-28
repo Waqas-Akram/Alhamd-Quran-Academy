@@ -6,6 +6,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 toast.configure();
 
@@ -90,6 +91,14 @@ const AdmissionForm = () => {
   });
   return (
     <Fragment>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Registration | Alhamd Quran Academy</title>
+        <meta
+          name="discription"
+          content=" Register now to Alhamd Quran Academy and get first 3 days education on a trial base"
+        />
+      </Helmet>
       <Container>
         <Jumbotron className="bg-dark shadow my-4">
           <Row>
