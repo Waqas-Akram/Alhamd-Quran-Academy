@@ -4,6 +4,7 @@ import InputArea from "./InputArea";
 import LoginAnimation from "../animations/login/LoginAnimation";
 import axios from 'axios';
 import StudentTable from './StudentTable'
+import {Helmet} from 'react-helmet'
 
 const Admin = () => {
   const [loading, setLoading] = useState(true);
@@ -24,6 +25,11 @@ useEffect(() => {
   };
   return loading ? (
     <Fragment>
+      <Helmet>
+                <meta charSet="utf-8" />
+                <title>Admin | Alhamd Quran Academy</title>
+                <meta name='discription'  content="Login as a admin and see all students and print their detail"/>
+            </Helmet>
       <Container>
       <Row>
         <Col md='4' lg='4' xl='4' xs='12' sm='12'>
