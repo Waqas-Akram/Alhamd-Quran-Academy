@@ -15,7 +15,7 @@ router.post("/send", async (req, res) => {
     detail,
     email,
     phoneNumber,
-    address
+    address,
   } = req.body;
   try {
     const transporter = nodemailer.createTransport({
@@ -48,9 +48,9 @@ router.post("/send", async (req, res) => {
         "</li><li>Course Applied:" +
         course +
         "</li><li>Extra detail : " +
-        Address +
-        "</li><li>Adress : " +
         detail +
+        "</li><li>Adress : " +
+        address +
         "</li></ul> </p>",
     };
     await transporter.sendMail(mailOptions, (error, info) => {
