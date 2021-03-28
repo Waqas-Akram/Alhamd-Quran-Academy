@@ -2,9 +2,9 @@ import React, { Fragment } from "react";
 import { Row, Col, Container, Button, Jumbotron } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../../styles/landing.css";
-import courseArray from "./CourseArray";
+import CourseArray from "./CourseArray";
 import CourseCard from "./CourseCard";
-import featureArray from "./FeatureArray";
+import FeatureArray from "./FeatureArray";
 import FeatureCard from "./FeatureCard";
 import { Helmet } from "react-helmet";
 

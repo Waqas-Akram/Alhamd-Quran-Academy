@@ -1,4 +1,4 @@
-const courseArray = [
+const CourseArray = [
   {
     id: 1,
     name: "Madni Qaidah",
@@ -28,4 +28,4 @@ const courseArray = [
       "This course is designed for those who wish to learn all basic to advanced features of namaz. you will learn how to offer prayers and say duas ",
   },
 ];
-export default courseArray;
+export default CourseArray;

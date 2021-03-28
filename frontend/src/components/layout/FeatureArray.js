@@ -1,7 +1,7 @@
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import OfflineBoltIcon from '@material-ui/icons/OfflineBolt';
-const featureArray = [
+const FeatureArray = [
   {
     id: 1,
     title: "24/7 Availability",
@@ -19,4 +19,4 @@ const featureArray = [
   },
 ];
 
-export default featureArray;
+export default FeatureArray;
