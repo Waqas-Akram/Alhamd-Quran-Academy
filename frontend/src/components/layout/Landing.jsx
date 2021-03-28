@@ -6,17 +6,27 @@ import courseArray from "./CourseArray";
 import CourseCard from "./CourseCard";
 import featureArray from "./FeatureArray";
 import FeatureCard from "./FeatureCard";
+import { Helmet } from "react-helmet";
 
 const Landing = () => {
   return (
     <Fragment>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title> Homepage | Alhamd Quran Academy </title>
+      </Helmet>
       <Jumbotron className="bg-dark text-white">
         <Container>
           <Row>
             <Col>
-              <h1>خَيْرُكُمْ مَنْ تَعَلَّمَ اْلقُرْآنَ وَعَلَّمَهُ</h1>
-              <h2>
-                The best of you are those who learn the Qur'an and teach it
+              <h1 className="landing-h1-header">
+                خَيْرُكُمْ مَنْ تَعَلَّمَ اْلقُرْآنَ وَعَلَّمَهُ
+              </h1>
+              <h2 className="landing-h1-header">
+                <q>
+                  {" "}
+                  The best of you are those who learn the Qur'an and teach it{" "}
+                </q>
               </h2>
             </Col>
             <Col lg="4" md="4" sm="4">
