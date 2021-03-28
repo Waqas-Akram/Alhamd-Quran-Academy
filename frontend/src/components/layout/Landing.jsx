@@ -70,7 +70,7 @@ const Landing = () => {
           </h3>
         </Jumbotron>
         <Row>
-          {courseArray.map((course) => {
+          {CourseArray.map((course) => {
             return (
               <Col sm="12" lg="4" md="6" xl="3" key={course.id}>
                 <CourseCard
@@ -88,7 +88,7 @@ const Landing = () => {
           </h3>
         </Jumbotron>
         <Row>
-          {featureArray.map((feature) => {
+          {FeatureArray.map((feature) => {
             return (
               <Col sm="12" lg="4" md="6" xl="4" key={feature.id}>
                 <FeatureCard title={feature.title} icon={feature.icon} />
