@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import ReactToPrint from "react-to-print";
 import PrintIcon from "@material-ui/icons/Print";
+import { Helmet } from "react-helmet";
 
 import Moment from "react-moment";
 
@@ -22,6 +23,10 @@ const SingleStudent = ({ match }) => {
   const componentRef = useRef();
   return (
     <Fragment>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{`${student.studentName}`} | Alhamd Quran Academy</title>
+      </Helmet>
       <div>
         <Container>
           <Link to="/admin">
