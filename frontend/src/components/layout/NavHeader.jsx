@@ -1,8 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
-import { Navbar, Nav, Button, Container } from "react-bootstrap";
+import { Navbar, Nav, Button, Container, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import ViewHeadlineIcon from "@material-ui/icons/ViewHeadline";
-import MenuBookIcon from "@material-ui/icons/MenuBook";
 
 const NavHeader = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -40,21 +39,28 @@ const NavHeader = () => {
       >
         <Container>
           <Navbar.Brand>
-            <h2
-              className={`text-center ${
+            <h3
+              className={`text-center  ${
                 scrollY ? "text-white" : "text-warning"
               } `}
             >
-              <b>
-                <MenuBookIcon /> Alhamd Quran
-                <p className="mt-0">Academy</p>
-              </b>
-            </h2>
+              <Image
+                className="ml-3 pl-3"
+                src="/images/Quran_logo.png"
+                style={{ opacity: "1", width: "70px" }}
+              />
+              <span className="d-none d-sm-inline-block">
+                <b>
+                  Alhamd Quran
+                  <>Academy</>
+                </b>
+              </span>
+            </h3>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav ">
             <ViewHeadlineIcon
               className={`${scrollY ? "text-white" : "text-warning"}`}
-              style={{ fontSize: "60px" }}
+              style={{ fontSize: "30px" }}
             />
           </Navbar.Toggle>
           <Navbar.Collapse id="responsive-navbar-nav">
