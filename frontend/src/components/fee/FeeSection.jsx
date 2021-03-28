@@ -3,10 +3,19 @@ import FeeArray from "./FeeArray";
 import FeeCard from "./FeeCard";
 import { Row, Col, Container, Jumbotron } from "react-bootstrap";
 import "./style.css";
+import { Helmet } from "react-helmet";
 
 const FeeSection = () => {
   return (
     <Fragment>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Fee Section | Alhamd Quran Academy</title>
+        <meta
+          name="description"
+          content="Check out fee structure for the courses we have offered"
+        />
+      </Helmet>
       <Container>
         <Jumbotron className="mt-3 bg-dark p-1 text-warning text-center">
           <h2 className="mt-1">
