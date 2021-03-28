@@ -40,90 +40,90 @@ const SingleStudent = ({ match }) => {
             <Row>
               <Col xs="12" md="6" xl="6" sm="6">
                 <div style={{ backgroundColor: "#F7F7F9" }}>
-                  <h3 className="p-3">
+                  <h5 className="p-3">
                     <b>Name</b> : &nbsp;{student.studentName}
-                  </h3>
+                  </h5>
                 </div>
               </Col>
               <Col xs="12" md="6" xl="6" sm="6">
                 <div style={{ backgroundColor: "#F7F7F9" }}>
-                  <h3 className="p-3">
+                  <h5 className="p-3">
                     <b>Father's Name</b> : &nbsp;{student.fatherName}
-                  </h3>
+                  </h5>
                 </div>
               </Col>
             </Row>
             <Row>
               <Col xs="12" md="6" xl="6" sm="6">
                 <div style={{ backgroundColor: "#F7F7F9" }}>
-                  <h3 className="p-3">
+                  <h5 className="p-3">
                     <b>Mother's Name</b> : &nbsp;{student.motherName}
-                  </h3>
+                  </h5>
                 </div>
               </Col>
               <Col xs="12" md="6" xl="6" sm="6">
                 <div style={{ backgroundColor: "#F7F7F9" }}>
-                  <h3 className="p-3">
+                  <h5 className="p-3">
                     <b>Birth Date</b> : &nbsp;{student.birthDate}
-                  </h3>
+                  </h5>
                 </div>
               </Col>
             </Row>
             <Row>
               <Col xs="12" md="6" xl="6" sm="6">
                 <div style={{ backgroundColor: "#F7F7F9" }}>
-                  <h3 className="p-3">
+                  <h5 className="p-3">
                     <b>Email</b> : &nbsp;{student.email}
-                  </h3>
+                  </h5>
                 </div>
               </Col>
               <Col xs="12" md="6" xl="6" sm="6">
                 <div style={{ backgroundColor: "#F7F7F9" }}>
-                  <h3 className="p-3">
+                  <h5 className="p-3">
                     <b>Phone Number </b> : &nbsp;{student.phoneNumber}
-                  </h3>
+                  </h5>
                 </div>
               </Col>
             </Row>
             <Row>
               <Col xs="12" md="6" xl="6" sm="6">
                 <div style={{ backgroundColor: "#F7F7F9" }}>
-                  <h3 className="p-3">
+                  <h5 className="p-3">
                     <b>Applied In</b> : &nbsp;{student.course}
-                  </h3>
+                  </h5>
                 </div>
               </Col>
               <Col xs="12" md="6" xl="6" sm="6">
                 <div style={{ backgroundColor: "#F7F7F9" }}>
-                  <h3 className="p-3">
+                  <h5 className="p-3">
                     <b>Selected Language</b> : &nbsp;{student.language}
-                  </h3>
+                  </h5>
                 </div>
               </Col>
             </Row>
             <Row>
               <Col xs="12" md="6" xl="6" sm="6">
                 <div style={{ backgroundColor: "#F7F7F9" }}>
-                  <h3 className="p-3">
+                  <h5 className="p-3">
                     <b>Address</b> : &nbsp;{student.address}
-                  </h3>
+                  </h5>
                 </div>
               </Col>
               <Col xs="12" md="6" xl="6" sm="6">
                 <div style={{ backgroundColor: "#F7F7F9" }}>
-                  <h3 className="p-3">
+                  <h5 className="p-3">
                     <b>Registered on</b> : &nbsp;
                     <Moment format="DD MMMM YYYY">{student.date}</Moment>
-                  </h3>
+                  </h5>
                 </div>
               </Col>
             </Row>
             <Row>
               <Col>
                 <div style={{ backgroundColor: "#F7F7F9" }}>
-                  <h3 className="p-3">
+                  <h5 className="p-3">
                     <b>Extra Detail</b> : &nbsp;{student.detail}
-                  </h3>
+                  </h5>
                 </div>
               </Col>
             </Row>
