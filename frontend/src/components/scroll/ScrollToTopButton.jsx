@@ -19,10 +19,11 @@ export default function ScrollToTopButton() {
   }, []);
   return isVisible ? (
     <BackToTop
-      text="Go Up"
-      backgroundColor="gray"
+      // text="Go Up"
+      icon="fas fa-arrow-up"
+      backgroundColor="#FF7518"
       position={{ right: "1%", bottom: "10%" }}
-      hover={{ backgroundColor: "#FF7518", color: "white" }}
+      hover={{ backgroundColor: "#373A3C", color: "white" ,border:"1px solid gray" }}
       transition="all 0.5s"
       showOnDistance={0}
       borderRadius={16}
