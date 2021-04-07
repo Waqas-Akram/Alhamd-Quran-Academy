@@ -16,14 +16,14 @@ const InputArea = ({ setLoading }) => {
       password: Yup.string().required("Password is required"),
     }),
     onSubmit: (values) => {
-      if (values.email !== "your email") {
+      if (values.email !== "alhamdquranacademy2526@gmail.com") {
         Swal.fire({
 
           title:"Incorrect Email",
           text:"If you are not an admin of this site , Don't do that again",
           icon:'warning'
         })
-      } else if (values.password !== "password") {
+      } else if (values.password !== "Saleem2526") {
         Swal.fire({
 
           title:"Wrong Password ",
