@@ -46,7 +46,7 @@ const NavHeader = () => {
             >
               <Image
                 className="ml-3 pl-3"
-                src="/images/Quran_logo.png"
+                src="/images/logo.jpeg"
                 style={{ opacity: "1", width: "70px" }}
               />
               <span className="d-none d-sm-inline-block">

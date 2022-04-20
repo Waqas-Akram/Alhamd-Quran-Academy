@@ -22,29 +22,29 @@ const Footer = () => {
                     <center>
                       <Image
                         src="/images/profile.jpeg"
-                        roundedCircle
+                        // roundedCircle
                         className="profile-image mt-0"
                       />
                     </center>
                     <h5>
-                      <b>Muhammad Saleem Razza Attari</b>
+                      <b>Qari Mohammed Raza </b>
                     </h5>
 
                     <p>
-                      <PhoneAndroidIcon className="text-danger" /> +923104125266
+                      <PhoneAndroidIcon className="text-danger" /> +923262641418
                     </p>
                     <p>
-                      <WhatsAppIcon className="text-success" /> +923224735463
+                      <WhatsAppIcon className="text-success" /> +923262641418
                     </p>
                     <p>
                       <EmailIcon className="text-primary" />{" "}
-                      <a href="mailto:saleem.qadri2526@gmail.com">
-                        &nbsp;saleem.qadri2526@gmail.com
+                      <a href="razaonline2526@gmail.com">
+                        &nbsp;razaonline2526@gmail.com
                       </a>
                     </p>
                     <p>
                       <Image src="/images/skype.png" width="25px" />{" "}
-                      +923224735463
+                      Mohammed Raza2525
                     </p>
                   </div>
                 </Col>
@@ -98,7 +98,7 @@ const Footer = () => {
                   <h2 className="mt-2 text-center">
                     <b>Follow us</b>
                   </h2>
-                  <center>
+                  {/* <center>
                     <a
                       href="https://web.facebook.com/saleem.qadri.31"
                       target="_blank"
@@ -113,7 +113,7 @@ const Footer = () => {
                     >
                       <InstagramIcon className="text-danger" />
                     </a>
-                  </center>
+                  </center> */}
                 </Col>
               </Row>
             </Col>
